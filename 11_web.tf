@@ -28,3 +28,14 @@ resource "aws_instance" "dhk_weba"{
     Name = "dhk-web1a"
   }
 }
+
+resource "aws_eip" "dhk_web_eip" {
+  vpc = true
+  instance                    = aws_instance.dhk_weba.id
+  associate_with_private_ip   = "10.0.0.11"
+  depends_on                  = [aws_internet_gateway.dh-ig]
+  
+}
+
+
+
