@@ -24,6 +24,6 @@ resource "aws_db_instance" "dhk_db" {
   tags = {
       name = "mydb"
   }
-  
+   
   
 }
